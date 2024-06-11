@@ -2,8 +2,7 @@
     <table>
       <thead>
         <tr>
-          <th>Stock Name</th>
-          <th>Code</th>
+          <th>Stock Code</th>
           <th>Last</th>
           <th>Vol</th>
           <th>Buy</th>
@@ -16,7 +15,6 @@
       </thead>
       <tbody>
         <tr v-for="stock in data" :key="stock.stockcode">
-          <td>{{ stock.stockname }}</td>
           <td>{{ stock.stockcode }}</td>
           <td :class="{ flash: stock.last !== stock.previousLast }">{{ stock.last }}</td>
           <td>{{ stock.volume }}</td>
@@ -53,6 +51,17 @@ export default {
   </script>
   
   <style>
-  /* Magdagdag ng table styling dito */
+table {
+    width: 100%; /* Make the table fill the width of its container */
+    margin: 0 auto; /* Center the table horizontally */
+}
+th, td {
+        padding: 8px;
+        text-align: center; /* Center the content */
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
   </style>
   
